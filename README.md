@@ -1,6 +1,6 @@
 # Siksha360 - Fee Payment Flow
 
-A clean architecture Flutter application utilizing Riverpod for state management. This project is structured to enforce separation of concerns, scalability, and testability.
+Siksha360 Fee Payment Flow is a Clean Architecture Flutter application designed for an assignment checkout flow. It allows parents to view pending education fees and complete a simulated, mock fee payment flow utilizing Riverpod for state management and GoRouter for navigation.
 
 ---
 
