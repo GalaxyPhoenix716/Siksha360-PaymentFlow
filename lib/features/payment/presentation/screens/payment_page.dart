@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:siksha360_task/features/home/domain/entities/student_fee.dart';
 
 class PaymentPage extends StatelessWidget {
-  const PaymentPage({super.key});
+  final StudentFee studentFee;
+  
+  const PaymentPage({super.key, required this.studentFee});
 
   @override
   Widget build(BuildContext context) {
