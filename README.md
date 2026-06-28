@@ -17,7 +17,7 @@ Siksha360 Fee Payment Flow is a Clean Architecture Flutter application designed 
 *Placeholder for the full list of tools, libraries, and frameworks.*
 
 - **Framework**: [Flutter](https://flutter.dev/) (Dart)
-- **State Management**: [Riverpod (flutter_riverpod)](https://riverpod.dev/)
+- **State Management**: [Riverpod (flutter_riverpod)](https://riverpod.dev/) with [Riverpod Generator](https://pub.dev/packages/riverpod_generator) (Code Generation)
 - **Routing**: [GoRouter (go_router)](https://pub.dev/packages/go_router)
 - **Architecture**: Clean Architecture (Feature-first approach)
 - **Local/Mock Storage**: _[Specify local data storage strategy here once implemented]_

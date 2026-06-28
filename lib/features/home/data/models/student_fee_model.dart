@@ -4,7 +4,7 @@ class StudentFeeModel extends StudentFee {
   const StudentFeeModel({
     required super.id,
     required super.studentName,
-    required super.classGrade,
+    required super.grade,
     required super.service,
     required super.fee,
   });
@@ -13,7 +13,7 @@ class StudentFeeModel extends StudentFee {
     return StudentFeeModel(
       id: json['id'] as String,
       studentName: json['studentName'] as String,
-      classGrade: json['classGrade'] as String,
+      grade: json['grade'] as String,
       service: json['service'] as String,
       fee: (json['fee'] as num).toDouble(),
     );
@@ -23,7 +23,7 @@ class StudentFeeModel extends StudentFee {
     return {
       'id': id,
       'studentName': studentName,
-      'classGrade': classGrade,
+      'grade': grade,
       'service': service,
       'fee': fee,
     };
