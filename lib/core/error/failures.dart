@@ -12,5 +12,10 @@ class ServerFailure extends Failure {
 }
 
 class PaymentFailure extends Failure {
-  const PaymentFailure({String message = 'Payment failed}'}) : super(message);
+  const PaymentFailure({String message = 'Payment failed'}) : super(message);
+}
+
+class PaymentValidationFailure extends Failure {
+  const PaymentValidationFailure({String message = 'Payment mode not selected'})
+    : super(message);
 }
