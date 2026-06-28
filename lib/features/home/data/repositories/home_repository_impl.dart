@@ -3,7 +3,7 @@ import 'package:siksha360_task/features/home/domain/entities/parent.dart';
 import 'package:siksha360_task/features/home/domain/repositories/home_repository.dart';
 
 class HomeRepositoryImpl implements HomeRepository {
-  final HomeRemoteDatasource remoteDatasource;
+  final HomeRemoteDataSource remoteDatasource;
 
   HomeRepositoryImpl({required this.remoteDatasource});
 

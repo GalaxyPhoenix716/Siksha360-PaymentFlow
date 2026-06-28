@@ -2,11 +2,11 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:siksha360_task/features/home/data/models/parent_model.dart';
 
-abstract class HomeRemoteDatasource {
+abstract class HomeRemoteDataSource {
   Future<ParentModel> fetchUser();
 }
 
-class HomeRemoteDatasourceImpl implements HomeRemoteDatasource {
+class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   @override
   Future<ParentModel> fetchUser() async {
     await Future.delayed(const Duration(milliseconds: 800));
