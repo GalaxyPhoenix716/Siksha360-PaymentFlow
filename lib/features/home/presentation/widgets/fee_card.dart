@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:siksha360_task/core/constants/colors.dart';
 
 class FeeCard extends StatelessWidget {
   final String schoolName;
   final String classGrade;
-  final String feeAmount;
+  final double feeAmount;
   final VoidCallback onPayPressed;
 
   const FeeCard({
@@ -67,7 +68,7 @@ class FeeCard extends StatelessWidget {
                         ),
                         const Spacer(),
                         Text(
-                          feeAmount,
+                          '$feeAmount',
                           style: const TextStyle(
                             fontSize: 36,
                             fontWeight: FontWeight.bold,
@@ -82,7 +83,7 @@ class FeeCard extends StatelessWidget {
                     width: 50,
                     height: 50,
                     decoration: const BoxDecoration(
-                      color: Color(0xFF555555),
+                      color: AppColors.primaryAccent,
                       shape: BoxShape.circle,
                     ),
                   ),
@@ -100,8 +101,8 @@ class FeeCard extends StatelessWidget {
               height: notchHeight - gap,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFE2E2E2),
-                  foregroundColor: Colors.black,
+                  backgroundColor: AppColors.primaryAccent,
+                  foregroundColor: AppColors.card,
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24),
