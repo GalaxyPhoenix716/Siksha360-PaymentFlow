@@ -5,7 +5,8 @@ class StudentFeeModel extends StudentFee {
     required super.id,
     required super.studentName,
     required super.grade,
-    required super.service,
+    required super.serviceName,
+    required super.serviceType,
     required super.fee,
   });
 
@@ -14,7 +15,8 @@ class StudentFeeModel extends StudentFee {
       id: json['id'] as String,
       studentName: json['studentName'] as String,
       grade: json['grade'] as String,
-      service: json['service'] as String,
+      serviceName: json['serviceName'] as String,
+      serviceType: json['serviceType'] as String,
       fee: (json['fee'] as num).toDouble(),
     );
   }
@@ -24,7 +26,8 @@ class StudentFeeModel extends StudentFee {
       'id': id,
       'studentName': studentName,
       'grade': grade,
-      'service': service,
+      'serviceName': serviceName,
+      'serviceType': serviceType,
       'fee': fee,
     };
   }

@@ -52,12 +52,7 @@ class HomePage extends ConsumerWidget {
 
                   const Spacer(),
 
-                  FeeCard(
-                    schoolName: user.children[0].service,
-                    classGrade: user.children[0].grade,
-                    feeAmount: user.children[0].fee,
-                    onPayPressed: () {},
-                  ),
+                  FeeCard(student: user.children[0]),
                 ],
               ),
             ),

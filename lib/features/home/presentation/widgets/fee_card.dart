@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:siksha360_task/core/constants/colors.dart';
+import 'package:siksha360_task/core/constants/route_names.dart';
+import 'package:siksha360_task/features/home/domain/entities/student_fee.dart';
 
 class FeeCard extends StatelessWidget {
-  final String schoolName;
-  final String classGrade;
-  final double feeAmount;
-  final VoidCallback onPayPressed;
+  final StudentFee student;
 
-  const FeeCard({
-    super.key,
-    required this.schoolName,
-    required this.classGrade,
-    required this.feeAmount,
-    required this.onPayPressed,
-  });
+  const FeeCard({super.key, required this.student});
+
+  void onPayPressed(BuildContext context) {
+    context.pushNamed(RouteNames.paymentRouteName, extra: student);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +45,7 @@ class FeeCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          schoolName,
+                          student.serviceName,
                           style: const TextStyle(
                             fontSize: 32,
                             fontWeight: FontWeight.bold,
@@ -59,7 +57,7 @@ class FeeCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          classGrade,
+                          student.grade,
                           style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w400,
@@ -68,7 +66,7 @@ class FeeCard extends StatelessWidget {
                         ),
                         const Spacer(),
                         Text(
-                          '$feeAmount',
+                          '${student.fee}',
                           style: const TextStyle(
                             fontSize: 36,
                             fontWeight: FontWeight.bold,
@@ -108,7 +106,7 @@ class FeeCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(24),
                   ),
                 ),
-                onPressed: onPayPressed,
+                onPressed: () => onPayPressed(context),
                 child: Row(
                   children: [
                     const Text(
