@@ -11,7 +11,11 @@ class HomePage extends ConsumerWidget {
 
     return Scaffold(
       body: homeState.when(
-        data: (user) => const SizedBox(),
+        data: (user) => CustomScrollView(
+          slivers: [
+            AppBar()
+          ],
+        ),
         error: (e, st) => const SizedBox(),
         loading: () => const SizedBox(),
       ),
