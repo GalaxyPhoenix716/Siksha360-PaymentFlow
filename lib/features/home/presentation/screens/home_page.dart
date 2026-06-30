@@ -63,7 +63,7 @@ class HomePage extends ConsumerWidget {
                             'assets/icons/pin-filled.svg',
                             width: 24,
                             height: 24,
-                            semanticsLabel: 'Arrow Up Right Icon',
+                            semanticsLabel: 'Pin Icon',
                             colorFilter: ColorFilter.mode(
                               theme.colorScheme.onSurface,
                               BlendMode.srcIn,

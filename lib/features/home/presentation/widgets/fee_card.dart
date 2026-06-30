@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:siksha360_task/core/constants/route_names.dart';
 import 'package:siksha360_task/core/utils/utils.dart';
@@ -45,66 +46,62 @@ class FeeCard extends StatelessWidget {
 
           Padding(
             padding: const EdgeInsets.all(24),
-            child: Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'FEE DUE',
-                        style: textTheme.bodyLarge?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
-                          fontWeight: FontWeight.bold,
-                        ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'FEE DUE',
+                      style: textTheme.bodyLarge?.copyWith(
+                        color: colorScheme.onSurfaceVariant,
+                        fontWeight: FontWeight.bold,
                       ),
-                      Tooltip(
-                        message: 'Fee Breakdown',
-                        child: Icon(
-                          Icons.keyboard_arrow_down_rounded,
-                          color: colorScheme.onSurface,
-                          size: 30,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 12),
-                  Row(
-                    children: [
-                      Icon(Icons.apartment, color: colorScheme.onSurface),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            student.serviceName,
-                            style: textTheme.headlineMedium,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    'Class ${student.grade} • II Quarter 2026-27',
-                    style: textTheme.bodyLarge?.copyWith(
-                      color: colorScheme.onSurfaceVariant,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 24,
-                  ), // Replaced Spacer with fixed height
-                  Text(
-                    '₹${NumberFormatter.format(student.fee)}',
-                    style: textTheme.headlineLarge?.copyWith(
-                      color: colorScheme.onSurface,
+                    Tooltip(
+                      message: 'Fee Breakdown',
+                      child: Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        color: colorScheme.onSurface,
+                        size: 30,
+                      ),
                     ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                Row(
+                  children: [
+                    Icon(Icons.apartment, color: colorScheme.onSurface),
+                    const SizedBox(width: 15),
+                    Expanded(
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          student.serviceName,
+                          style: textTheme.headlineMedium,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Class ${student.grade} • II Quarter 2026-27',
+                  style: textTheme.bodyLarge?.copyWith(
+                    color: colorScheme.onSurfaceVariant,
                   ),
-                ],
-              ),
+                ),
+                const SizedBox(height: 24), // Replaced Spacer with fixed height
+                Text(
+                  '₹${NumberFormatter.format(student.fee)}',
+                  style: textTheme.headlineLarge?.copyWith(
+                    color: colorScheme.onSurface,
+                  ),
+                ),
+              ],
             ),
           ),
 
@@ -125,8 +122,8 @@ class FeeCard extends StatelessWidget {
                 ),
                 onPressed: () => onPayPressed(context),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
                     Text(
                       'Pay',
                       style: TextStyle(
@@ -134,8 +131,17 @@ class FeeCard extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(width: 6),
-                    Icon(Icons.arrow_outward, size: 18),
+                    SizedBox(width: 10),
+                    SvgPicture.asset(
+                      'assets/icons/arrow-up-right.svg',
+                      width: 24,
+                      height: 24,
+                      semanticsLabel: 'Arrow Up Right Icon',
+                      colorFilter: ColorFilter.mode(
+                        colorScheme.onPrimary,
+                        BlendMode.srcIn,
+                      ),
+                    ),
                   ],
                 ),
               ),
