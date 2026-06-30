@@ -25,7 +25,6 @@ class FeeCard extends StatelessWidget {
     final TextTheme textTheme = theme.textTheme;
 
     return SizedBox(
-      height: 180,
       width: double.infinity,
       child: Stack(
         children: [
@@ -45,57 +44,67 @@ class FeeCard extends StatelessWidget {
           ),
 
           Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            padding: const EdgeInsets.all(24),
+            child: Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'FEE DUE',
-                        style: textTheme.bodyMedium?.copyWith(
+                        style: textTheme.bodyLarge?.copyWith(
                           color: colorScheme.onSurfaceVariant,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 12),
-                      Row(
-                        children: [
-                          Icon(Icons.apartment, color: colorScheme.onSurface),
-                          const SizedBox(width: 15),
-                          Expanded(
-                            child: FittedBox(
-                              fit: BoxFit.scaleDown,
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                student.serviceName,
-                                style: textTheme.headlineMedium,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        'Class ${student.grade}',
-                        style: textTheme.bodyLarge?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
-                        ),
-                      ),
-                      const Spacer(),
-                      Text(
-                        '₹${NumberFormatter.format(student.fee)}',
-                        style: textTheme.headlineLarge?.copyWith(
+                      Tooltip(
+                        message: 'Fee Breakdown',
+                        child: Icon(
+                          Icons.keyboard_arrow_down_rounded,
                           color: colorScheme.onSurface,
+                          size: 30,
                         ),
                       ),
                     ],
                   ),
-                ),
-              ],
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      Icon(Icons.apartment, color: colorScheme.onSurface),
+                      const SizedBox(width: 15),
+                      Expanded(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            student.serviceName,
+                            style: textTheme.headlineMedium,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'Class ${student.grade} • II Quarter 2026-27',
+                    style: textTheme.bodyLarge?.copyWith(
+                      color: colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 24,
+                  ), // Replaced Spacer with fixed height
+                  Text(
+                    '₹${NumberFormatter.format(student.fee)}',
+                    style: textTheme.headlineLarge?.copyWith(
+                      color: colorScheme.onSurface,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
 
