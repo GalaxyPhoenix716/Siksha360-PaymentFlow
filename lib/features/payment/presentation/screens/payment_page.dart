@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:siksha360_task/features/home/domain/entities/student_fee.dart';
 import 'package:siksha360_task/features/payment/presentation/widgets/fee_summary_card.dart';
 import 'package:siksha360_task/features/payment/presentation/widgets/payment_mode_selector.dart';
+import 'package:siksha360_task/features/payment/presentation/widgets/slide_to_pay.dart';
 import 'package:siksha360_task/shared/siksha_appbar.dart';
 
 class PaymentPage extends StatelessWidget {
@@ -43,6 +44,18 @@ class PaymentPage extends StatelessWidget {
                     textTheme: textTheme,
                     colorScheme: colorScheme,
                   ),
+
+                  const SizedBox(height: 15),
+
+                  SlideToPay(
+                    textTheme: textTheme,
+                    colorScheme: colorScheme,
+                    receiverName: studentFee.serviceName,
+                    receiverType: studentFee.serviceType,
+                    amount: studentFee.fee,
+                  ),
+
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
