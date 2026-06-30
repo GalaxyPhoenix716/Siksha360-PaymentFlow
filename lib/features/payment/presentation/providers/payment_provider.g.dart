@@ -44,7 +44,45 @@ final processPaymentUseCaseProvider =
 // ignore: unused_element
 typedef ProcessPaymentUseCaseRef =
     AutoDisposeProviderRef<ProcessPaymentUseCase>;
-String _$paymentControllerHash() => r'7b72814bd2965dce3ebabf5f184f3baa9e583c0c';
+String _$invoiceRepositoryHash() => r'40843a3bc6c8128fe7ff9fc2d282090d7dd65a8a';
+
+/// See also [invoiceRepository].
+@ProviderFor(invoiceRepository)
+final invoiceRepositoryProvider =
+    AutoDisposeProvider<InvoiceRepository>.internal(
+      invoiceRepository,
+      name: r'invoiceRepositoryProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$invoiceRepositoryHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef InvoiceRepositoryRef = AutoDisposeProviderRef<InvoiceRepository>;
+String _$generateInvoiceUseCaseHash() =>
+    r'96e95602879a1851b4a93243d08edebcd7c0ab18';
+
+/// See also [generateInvoiceUseCase].
+@ProviderFor(generateInvoiceUseCase)
+final generateInvoiceUseCaseProvider =
+    AutoDisposeProvider<GenerateInvoiceUseCase>.internal(
+      generateInvoiceUseCase,
+      name: r'generateInvoiceUseCaseProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$generateInvoiceUseCaseHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef GenerateInvoiceUseCaseRef =
+    AutoDisposeProviderRef<GenerateInvoiceUseCase>;
+String _$paymentControllerHash() => r'b14ed8894d933dc460ebdbdcf2adb25213e36e75';
 
 /// See also [PaymentController].
 @ProviderFor(PaymentController)

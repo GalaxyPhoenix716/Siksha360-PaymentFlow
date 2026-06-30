@@ -1,7 +1,10 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:siksha360_task/features/payment/data/repositories/invoice_repository_impl.dart';
 import 'package:siksha360_task/features/payment/data/repositories/payment_repository_impl.dart';
 import 'package:siksha360_task/features/payment/domain/entities/payment_method.dart';
+import 'package:siksha360_task/features/payment/domain/repositories/invoice_repository.dart';
 import 'package:siksha360_task/features/payment/domain/repositories/payment_repository.dart';
+import 'package:siksha360_task/features/payment/domain/usecases/generate_invoice.dart';
 import 'package:siksha360_task/features/payment/domain/usecases/process_payment.dart';
 import 'package:siksha360_task/features/payment/presentation/providers/payment_state.dart';
 
@@ -16,6 +19,17 @@ PaymentRepository paymentRepository(PaymentRepositoryRef ref) {
 ProcessPaymentUseCase processPaymentUseCase(ProcessPaymentUseCaseRef ref) {
   final repository = ref.watch(paymentRepositoryProvider);
   return ProcessPaymentUseCase(repository);
+}
+
+@riverpod
+InvoiceRepository invoiceRepository(InvoiceRepositoryRef ref) {
+  return InvoiceRepositoryImpl();
+}
+
+@riverpod
+GenerateInvoiceUseCase generateInvoiceUseCase(GenerateInvoiceUseCaseRef ref) {
+  final repository = ref.watch(invoiceRepositoryProvider);
+  return GenerateInvoiceUseCase(repository);
 }
 
 @riverpod
@@ -65,6 +79,16 @@ class PaymentController extends _$PaymentController {
         errorMessage: () => e.toString(),
       );
       return false;
+    }
+  }
+
+  Future<String?> downloadInvoice() async {
+    if (state.transaction == null) return null;
+    try {
+      final usecase = ref.read(generateInvoiceUseCaseProvider);
+      return await usecase.execute(state.transaction!);
+    } catch (e) {
+      return null;
     }
   }
 

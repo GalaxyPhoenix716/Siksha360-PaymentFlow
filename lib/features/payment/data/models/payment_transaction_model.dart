@@ -1,4 +1,3 @@
-import '../../domain/entities/payment_method.dart';
 import '../../domain/entities/payment_transaction.dart';
 
 class PaymentTransactionModel extends PaymentTransaction {
@@ -7,7 +6,7 @@ class PaymentTransactionModel extends PaymentTransaction {
     required super.receiverName,
     required super.receiverType,
     required super.amount,
-    super.paymentMethod,
+    required super.paymentMethod,
     required super.timestamp,
   });
 
@@ -17,11 +16,7 @@ class PaymentTransactionModel extends PaymentTransaction {
       receiverName: json['receiverName'] as String,
       receiverType: json['receiverType'] as String,
       amount: (json['amount'] as num).toDouble(),
-      paymentMethod: json['paymentMethod'] != null
-          ? PaymentMethod.values.firstWhere(
-              (e) => e.name == json['paymentMethod'],
-            )
-          : null,
+      paymentMethod: json['paymentMethod'],
       timestamp: DateTime.parse(json['timestamp'] as String),
     );
   }
@@ -32,7 +27,7 @@ class PaymentTransactionModel extends PaymentTransaction {
       'receiverName': receiverName,
       'receiverType': receiverType,
       'amount': amount,
-      'paymentMethod': paymentMethod?.name,
+      'paymentMethod': paymentMethod.name,
       'timestamp': timestamp.toIso8601String(),
     };
   }

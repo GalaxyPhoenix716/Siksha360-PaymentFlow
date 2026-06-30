@@ -5,6 +5,7 @@ import 'package:lottie/lottie.dart';
 import 'package:siksha360_task/core/utils/utils.dart';
 import 'package:siksha360_task/features/payment/presentation/providers/payment_provider.dart';
 import 'package:siksha360_task/features/payment/presentation/widgets/payment_summary.dart';
+import 'package:open_filex/open_filex.dart';
 
 class PaymentCompletedPage extends ConsumerWidget {
   const PaymentCompletedPage({super.key});
@@ -108,13 +109,33 @@ class PaymentCompletedPage extends ConsumerWidget {
                       borderRadius: BorderRadius.circular(16),
                     ),
                   ),
-                  onPressed: () {
+                  onPressed: () async {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('Downloading invoice...'),
                         duration: Duration(seconds: 2),
                       ),
                     );
+
+                    final filePath = await ref
+                        .read(paymentControllerProvider.notifier)
+                        .downloadInvoice();
+
+                    if (filePath != null) {
+                      await OpenFilex.open(filePath);
+                    } else {
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Error in downloading invoice'),
+                            duration: Duration(seconds: 2),
+                            backgroundColor: colorScheme.error,
+                          ),
+                        );
+                      } else {
+                        return;
+                      }
+                    }
                   },
                 ),
               ),

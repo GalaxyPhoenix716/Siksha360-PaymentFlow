@@ -18,6 +18,9 @@ dependencies:
   slide_to_act: ^2.0.2
   flutter_spinkit: ^5.2.2
   lottie: ^3.4.0
+  pdf: ^3.13.0
+  path_provider: ^2.1.6
+  open_filex: ^4.7.0
 
 dev_dependencies:
   flutter_test:

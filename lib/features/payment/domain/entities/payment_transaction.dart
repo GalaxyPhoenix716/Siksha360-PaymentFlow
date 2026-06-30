@@ -5,7 +5,7 @@ class PaymentTransaction {
   final String receiverName;
   final String receiverType;
   final double amount;
-  final PaymentMethod? paymentMethod;
+  final PaymentMethod paymentMethod;
   final DateTime timestamp;
 
   const PaymentTransaction({
@@ -13,7 +13,7 @@ class PaymentTransaction {
     required this.receiverName,
     required this.receiverType,
     required this.amount,
-    this.paymentMethod,
+    required this.paymentMethod,
     required this.timestamp,
   });
 }

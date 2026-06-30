@@ -88,7 +88,7 @@ class PaymentSummary extends StatelessWidget {
                 ),
               ),
               Text(
-                transaction.paymentMethod!.label,
+                transaction.paymentMethod.label,
                 style: textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: colorScheme.onSurface,
