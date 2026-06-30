@@ -1,33 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:siksha360_task/core/constants/colors.dart';
 
 class SikshaAppbar extends StatelessWidget {
   const SikshaAppbar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final textTheme = theme.textTheme;
+
     return SliverAppBar(
-      backgroundColor: AppColors.background,
-      surfaceTintColor: AppColors.background,
+      backgroundColor: theme.scaffoldBackgroundColor,
+      surfaceTintColor: theme.scaffoldBackgroundColor,
       pinned: true,
-      // leading: const Text('Siksha360', maxLines: 1,overflow: TextOverflow.ellipsis,),
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 16.0),
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            'Siksha360',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: colorScheme.onSurface,
+            ),
+          ),
+        ),
+      ),
+      leadingWidth: 140.0,
       actions: [
         Stack(
           children: [
             CircleAvatar(
               radius: 20,
-              backgroundColor: AppColors.primaryAccent,
-              child: Icon(Icons.person, color: Colors.white, size: 25),
+              backgroundColor: colorScheme.primary,
+              child: const Icon(Icons.person, color: Colors.white, size: 25),
             ),
             Positioned(
               right: 25,
               top: -2,
               child: CircleAvatar(
                 radius: 22,
-                backgroundColor: AppColors.background,
+                backgroundColor: theme.scaffoldBackgroundColor,
                 child: CircleAvatar(
                   radius: 20,
-                  backgroundColor: AppColors.primaryDark,
+                  backgroundColor: colorScheme.onSurface,
                 ),
               ),
             ),

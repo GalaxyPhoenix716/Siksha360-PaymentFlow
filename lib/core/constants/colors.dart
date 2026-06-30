@@ -1,9 +1,24 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
+  // Original Constants
   static const Color background = Color(0xFFFAF1E6);
   static const Color card = Color(0xFFFFFFFF);
   static const Color primaryDark = Color(0xFF1C2E24);
   static const Color primaryAccent = Color(0xFF325A46);
   static const Color secondaryText = Color(0xFF786E64);
+
+  // Light Mode Colors
+  static const Color backgroundLight = Color(0xFFFAF1E6);
+  static const Color cardLight = Color(0xFFFFFFFF);
+  static const Color textPrimaryLight = Color(0xFF1C2E24);
+  static const Color primaryAccentLight = Color(0xFF325A46);
+  static const Color textSecondaryLight = Color(0xFF786E64);
+
+  // Dark Mode Colors
+  static const Color backgroundDark = Color(0xFF121E17);
+  static const Color cardDark = Color(0xFF1C2E24);
+  static const Color textPrimaryDark = Color(0xFFFAF1E6);
+  static const Color primaryAccentDark = Color(0xFF4E8166);
+  static const Color textSecondaryDark = Color(0xFFA69B90);
 }

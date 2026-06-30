@@ -57,7 +57,7 @@ class FeeCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          student.grade,
+                          'Class ${student.grade}',
                           style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w400,
