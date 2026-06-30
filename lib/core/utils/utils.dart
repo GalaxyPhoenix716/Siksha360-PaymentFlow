@@ -1,7 +1,7 @@
 class NumberFormatter {
   static String format(num amount) {
     final isInteger = amount % 1 == 0;
-    
+
     if (isInteger) {
       return _addCommas(amount.toInt().toString());
     } else {
@@ -9,11 +9,11 @@ class NumberFormatter {
       final List<String> parts = formattedString.split('.');
       final String integerPart = _addCommas(parts[0]);
       final String decimalPart = parts[1];
-      
+
       if (decimalPart == '00') {
         return integerPart;
       }
-      
+
       return '$integerPart.$decimalPart';
     }
   }

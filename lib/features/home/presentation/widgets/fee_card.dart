@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:siksha360_task/core/constants/colors.dart';
 import 'package:siksha360_task/core/constants/route_names.dart';
+import 'package:siksha360_task/core/utils/utils.dart';
 import 'package:siksha360_task/features/home/domain/entities/student_fee.dart';
 
 class FeeCard extends StatelessWidget {
@@ -20,6 +21,10 @@ class FeeCard extends StatelessWidget {
     const double gap = 10;
     const double margin = gap / 2;
 
+    final ThemeData theme = Theme.of(context);
+    final ColorScheme colorScheme = theme.colorScheme;
+    final TextTheme textTheme = theme.textTheme;
+
     return SizedBox(
       height: 180,
       width: double.infinity,
@@ -34,7 +39,7 @@ class FeeCard extends StatelessWidget {
               cutoutH: notchHeight,
             ),
             child: Container(
-              color: AppColors.card,
+              color: colorScheme.surface,
               padding: const EdgeInsets.all(24.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,45 +49,35 @@ class FeeCard extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          student.serviceName,
-                          style: const TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                            height: 1.1,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
+                        Row(
+                          children: [
+                            Icon(Icons.apartment, color: colorScheme.onSurface),
+
+                            const SizedBox(width: 5),
+
+                            FittedBox(
+                              child: Text(
+                                student.serviceName,
+                                style: textTheme.headlineMedium,
+                              ),
+                            ),
+                          ],
                         ),
                         const SizedBox(height: 4),
                         Text(
                           'Class ${student.grade}',
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.black54,
+                          style: textTheme.bodyLarge?.copyWith(
+                            color: AppColors.textSecondaryLight,
                           ),
                         ),
                         const Spacer(),
                         Text(
-                          '${student.fee}',
-                          style: const TextStyle(
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                          '₹${NumberFormatter.format(student.fee)}',
+                          style: textTheme.headlineLarge?.copyWith(
+                            color: colorScheme.onSurface,
                           ),
                         ),
                       ],
-                    ),
-                  ),
-
-                  Container(
-                    width: 50,
-                    height: 50,
-                    decoration: const BoxDecoration(
-                      color: AppColors.primaryAccent,
-                      shape: BoxShape.circle,
                     ),
                   ),
                 ],
@@ -99,8 +94,8 @@ class FeeCard extends StatelessWidget {
               height: notchHeight - gap,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.primaryAccent,
-                  foregroundColor: AppColors.card,
+                  backgroundColor: colorScheme.primary,
+                  foregroundColor: colorScheme.onPrimary,
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24),
