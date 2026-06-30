@@ -20,45 +20,48 @@ class HomePage extends ConsumerWidget {
             SikshaAppbar(),
 
             SliverToBoxAdapter(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text('Hello ${user.name}'),
-
-                  const Spacer(),
-
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: AppColors.card,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Column(),
-                  ),
-
-                  const Spacer(),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text('NOTICE'),
-                      const Icon(
-                        Icons.push_pin_outlined,
-                        color: AppColors.primaryDark,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text('Hello ${user.name}'),
+                
+                    const SizedBox(height: 16.0),
+                
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: AppColors.card,
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                    ],
-                  ),
-
-                  const Spacer(),
-
-                  FeeCard(student: user.children[0]),
-                ],
+                      child: Column(),
+                    ),
+                
+                    const SizedBox(height: 24.0),
+                
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('NOTICE'),
+                        const Icon(
+                          Icons.push_pin_outlined,
+                          color: AppColors.primaryDark,
+                        ),
+                      ],
+                    ),
+                
+                    const SizedBox(height: 16.0),
+                
+                    FeeCard(student: user.children[0]),
+                  ],
+                ),
               ),
             ),
           ],
         ),
-        error: (e, st) => const SizedBox(),
+        error: (e, st) => Text(e.toString()),
         loading: () => const SizedBox(),
       ),
     );

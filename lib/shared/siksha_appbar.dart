@@ -10,23 +10,23 @@ class SikshaAppbar extends StatelessWidget {
       backgroundColor: AppColors.background,
       surfaceTintColor: AppColors.background,
       pinned: true,
-      leading: const Text('Siksha360'),
+      // leading: const Text('Siksha360', maxLines: 1,overflow: TextOverflow.ellipsis,),
       actions: [
         Stack(
           children: [
             CircleAvatar(
-              radius: 25,
+              radius: 20,
               backgroundColor: AppColors.primaryAccent,
               child: Icon(Icons.person, color: Colors.white, size: 25),
             ),
             Positioned(
-              right: 5,
-              top: -3,
+              right: 25,
+              top: -2,
               child: CircleAvatar(
-                radius: 28,
+                radius: 22,
                 backgroundColor: AppColors.background,
                 child: CircleAvatar(
-                  radius: 25,
+                  radius: 20,
                   backgroundColor: AppColors.primaryDark,
                 ),
               ),

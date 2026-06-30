@@ -15,9 +15,9 @@ class FeeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double notchWidth = 150.0;
-    const double notchHeight = 58.0;
-    const double gap = 8.0;
+    const double notchWidth = 150;
+    const double notchHeight = 58;
+    const double gap = 10;
     const double margin = gap / 2;
 
     return SizedBox(
@@ -34,7 +34,7 @@ class FeeCard extends StatelessWidget {
               cutoutH: notchHeight,
             ),
             child: Container(
-              color: const Color(0xFFD9D9D9),
+              color: AppColors.card,
               padding: const EdgeInsets.all(24.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,6 +108,7 @@ class FeeCard extends StatelessWidget {
                 ),
                 onPressed: () => onPayPressed(context),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
                       'Pay',
