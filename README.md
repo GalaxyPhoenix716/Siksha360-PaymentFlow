@@ -29,9 +29,9 @@ Additionally, I integrated a "Slide to Pay" slider instead of a standard tap but
 
 ## 📸 Screenshots
 
-|                Home Screen                |                 Payment Screen                  |                      Payment Successful Screen                       |             Generated Invoice              |
-| :---------------------------------------: | :---------------------------------------------: | :------------------------------------------------------------------: | :----------------------------------------: |
-| ![Home](assets/screenshots/home_page.jpg) | ![Payment](assets/screenshots/payment_page.jpg) | ![Payment Successful](assets/screenshots/payment_completed_page.jpg) | ![Invoice](assets/screenshots/invoice.jpg) |
+| Home Screen | Payment Screen | Payment Success Screen | Generated Invoice |
+| :---: | :---: | :---: | :---: |
+| <img src="assets/screenshots/home_page.jpg" height="450" alt="Home Screen"/> | <img src="assets/screenshots/payment_page.jpg" height="450" alt="Payment Screen"/> | <img src="assets/screenshots/payment_completed_page.jpg" height="450" alt="Payment Success"/> | <img src="assets/screenshots/invoice.jpg" height="450" alt="Invoice"/> |
 
 ---
 
