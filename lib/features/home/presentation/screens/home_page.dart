@@ -25,7 +25,7 @@ class HomePage extends ConsumerWidget {
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 24,
+                  horizontal: 20,
                   vertical: 10,
                 ),
                 child: Column(

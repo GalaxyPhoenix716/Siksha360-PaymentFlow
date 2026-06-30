@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:siksha360_task/core/constants/colors.dart';
 import 'package:siksha360_task/core/constants/route_names.dart';
@@ -53,12 +54,14 @@ class FeeCard extends StatelessWidget {
                           children: [
                             Icon(Icons.apartment, color: colorScheme.onSurface),
 
-                            const SizedBox(width: 5),
+                            const SizedBox(width: 15),
 
-                            FittedBox(
-                              child: Text(
-                                student.serviceName,
-                                style: textTheme.headlineMedium,
+                            Expanded(
+                              child: FittedBox(
+                                child: Text(
+                                  student.serviceName,
+                                  style: textTheme.headlineMedium,
+                                ),
                               ),
                             ),
                           ],
@@ -110,6 +113,17 @@ class FeeCard extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
+                      ),
+                    ),
+
+                    SvgPicture.asset(
+                      'assets/icons/arrow-up-right.svg',
+                      width: 24,
+                      height: 24,
+                      semanticsLabel: 'Arrow Up Right Icon',
+                      colorFilter: ColorFilter.mode(
+                        theme.colorScheme.onPrimary,
+                        BlendMode.srcIn,
                       ),
                     ),
                   ],
