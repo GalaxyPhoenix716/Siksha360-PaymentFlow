@@ -8,9 +8,9 @@ Siksha360 Fee Payment Flow is a Clean Architecture Flutter application designed 
 
 ## 🎨 UI/UX Reasoning
 
-I designed this application to be easily operated with a single hand, keeping in mind that busy parents are often multitasking and might only have one hand free. By positioning the interactive elements—like the main fee card and the "Slide to Pay" slider—near the bottom of the screen, I ensured they sit comfortably within natural thumb reach.
+I designed this application to be easily operated with a single hand, keeping in mind that busy parents are often multitasking and might only have one hand free. By positioning the interactive elements like the main fee card and the "Slide to Pay" slider near the bottom of the screen, I ensured they sit comfortably within natural thumb reach.
 
-Knowing that parents prefer a clean, focused environment when managing finances, I chose a simple, clutter-free layout over a loud or busy design. The soothing, premium green-and-cream color palette is easy on the eyes and brings a sense of calm and stability to the payment process.
+Knowing that parents prefer a clean, focused environment when managing finances, I chose a simple, clutter free layout over a loud or busy design. The soothing, premium green and cream color palette is easy on the eyes and brings a sense of calm and stability to the payment process.
 
 Additionally, I integrated a "Slide to Pay" slider instead of a standard tap button. This physical swipe gesture acts as a safety guard, preventing accidental payments from a child playing with the phone or a parent's unintended misclick.
 
@@ -32,6 +32,13 @@ Additionally, I integrated a "Slide to Pay" slider instead of a standard tap but
 |                Home Screen                |                 Payment Screen                  |                      Payment Successful Screen                       |             Generated Invoice              |
 | :---------------------------------------: | :---------------------------------------------: | :------------------------------------------------------------------: | :----------------------------------------: |
 | ![Home](assets/screenshots/home_page.jpg) | ![Payment](assets/screenshots/payment_page.jpg) | ![Payment Successful](assets/screenshots/payment_completed_page.jpg) | ![Invoice](assets/screenshots/invoice.jpg) |
+
+---
+
+## 🔗 Demo Link
+
+- **Video Demo**: [Click to watch demo](https://drive.google.com/file/d/1d5H74SknGbhQ4JB3FjbOSSvjQFxVb-hE/view?usp=sharing)
+- **APK Download**: [Click to download apk](https://github.com/GalaxyPhoenix716/Siksha360-PaymentFlow/releases/tag/v0.1.0-alpha)
 
 ---
 
