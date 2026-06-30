@@ -14,6 +14,9 @@ class AppTheme {
         primary: AppColors.primaryAccentLight,
         onPrimary: Colors.white,
         secondary: AppColors.textSecondaryLight,
+        onSurfaceVariant: AppColors.textSecondaryLight,
+        primaryContainer: AppColors.gradientStartLight,
+        secondaryContainer: AppColors.gradientEndLight,
       ),
       textTheme: AppTextTheme.getLightTextTheme(
         AppColors.textPrimaryLight,
@@ -43,6 +46,9 @@ class AppTheme {
         primary: AppColors.primaryAccentDark,
         onPrimary: Colors.white,
         secondary: AppColors.textSecondaryDark,
+        onSurfaceVariant: AppColors.textSecondaryDark,
+        primaryContainer: AppColors.gradientStartDark,
+        secondaryContainer: AppColors.gradientEndDark,
       ),
       textTheme: AppTextTheme.getDarkTextTheme(
         AppColors.textPrimaryDark,

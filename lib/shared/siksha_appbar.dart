@@ -35,7 +35,11 @@ class SikshaAppbar extends StatelessWidget {
             CircleAvatar(
               radius: 20,
               backgroundColor: colorScheme.primary,
-              child: const Icon(Icons.person, color: Colors.white, size: 25),
+              child: Icon(
+                Icons.person_outline,
+                color: colorScheme.onPrimary,
+                size: 22,
+              ),
             ),
             Positioned(
               right: 25,
@@ -46,6 +50,14 @@ class SikshaAppbar extends StatelessWidget {
                 child: CircleAvatar(
                   radius: 20,
                   backgroundColor: colorScheme.onSurface,
+                  child: Text(
+                    'AS',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: theme.scaffoldBackgroundColor,
+                    ),
+                  ),
                 ),
               ),
             ),

@@ -42,12 +42,28 @@ class HomePage extends ConsumerWidget {
                     Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 20,
-                        vertical: 16,
+                        vertical: 18,
                       ),
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: colorScheme.primary,
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(24),
+                        gradient: LinearGradient(
+                          colors: [
+                            colorScheme.primaryContainer,
+                            colorScheme.secondaryContainer,
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: colorScheme.onSurface.withValues(
+                              alpha: 0.06,
+                            ),
+                            blurRadius: 24,
+                            offset: const Offset(0, 8),
+                          ),
+                        ],
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +72,7 @@ class HomePage extends ConsumerWidget {
                             'Child Info',
                             style: textTheme.bodyLarge?.copyWith(
                               color: colorScheme.onPrimary.withValues(
-                                alpha: 0.5,
+                                alpha: 0.6,
                               ),
                             ),
                           ),
