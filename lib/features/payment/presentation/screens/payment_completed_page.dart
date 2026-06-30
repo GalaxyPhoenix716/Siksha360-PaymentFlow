@@ -29,8 +29,7 @@ class PaymentCompletedPage extends ConsumerWidget {
       );
     }
 
-    final dateStr =
-        "${transaction.timestamp.day.toString().padLeft(2, '0')}/${transaction.timestamp.month.toString().padLeft(2, '0')}/${transaction.timestamp.year} ${transaction.timestamp.hour.toString().padLeft(2, '0')}:${transaction.timestamp.minute.toString().padLeft(2, '0')}";
+    final dateStr = DateTimeFormatter.format(transaction.timestamp);
 
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
