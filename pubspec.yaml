@@ -35,3 +35,4 @@ flutter:
     - assets/mockData.json
     - assets/icons/
     - assets/lottie/
+    - assets/screenshots/

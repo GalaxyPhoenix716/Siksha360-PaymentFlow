@@ -28,8 +28,8 @@ Siksha360 Fee Payment Flow is a Clean Architecture Flutter application designed 
 ## 📸 Screenshots
 *Placeholder for screenshots of the 3 required screens.*
 
-| Home Screen | Payment Details Screen | Payment Success Screen |
-| :---: | :---: | :---: |
+| Home Screen | Payment Details Screen | Payment Success Screen | Invoice |
+| :---: | :---: | :---: | :---: |
 | *[Screenshot Home]* | *[Screenshot Payment Details]* | *[Screenshot Payment Success]* |
 
 ---
