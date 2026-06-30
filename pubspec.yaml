@@ -28,6 +28,8 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   riverpod_generator: ^2.4.3
   build_runner: ^2.4.11
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.8
 
 flutter:
   uses-material-design: true
@@ -36,3 +38,17 @@ flutter:
     - assets/icons/
     - assets/lottie/
     - assets/screenshots/
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/app_icon.png"
+
+flutter_native_splash:
+  color: "#FAF1E6"
+  image: "assets/icons/app_icon.png"
+  fullscreen: true
+
+  android_12:
+    image: "assets/icons/app_icon.png"
+    color: "#FAF1E6"
