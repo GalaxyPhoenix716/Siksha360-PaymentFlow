@@ -10,9 +10,10 @@ class AppTheme {
       scaffoldBackgroundColor: AppColors.backgroundLight,
       colorScheme: const ColorScheme.light(
         surface: AppColors.cardLight,
+        onSurface: AppColors.textPrimaryLight,
         primary: AppColors.primaryAccentLight,
         onPrimary: Colors.white,
-        onSurface: AppColors.textPrimaryLight,
+        secondary: AppColors.textSecondaryLight,
       ),
       textTheme: AppTextTheme.getLightTextTheme(
         AppColors.textPrimaryLight,
@@ -38,9 +39,10 @@ class AppTheme {
       scaffoldBackgroundColor: AppColors.backgroundDark,
       colorScheme: const ColorScheme.dark(
         surface: AppColors.cardDark,
+        onSurface: AppColors.textPrimaryDark,
         primary: AppColors.primaryAccentDark,
         onPrimary: Colors.white,
-        onSurface: AppColors.textPrimaryDark,
+        secondary: AppColors.textSecondaryDark,
       ),
       textTheme: AppTextTheme.getDarkTextTheme(
         AppColors.textPrimaryDark,

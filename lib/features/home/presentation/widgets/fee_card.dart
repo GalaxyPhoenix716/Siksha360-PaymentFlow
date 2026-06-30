@@ -17,7 +17,7 @@ class FeeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double notchWidth = 150;
+    const double notchWidth = 130;
     const double notchHeight = 58;
     const double gap = 10;
     const double margin = gap / 2;
@@ -27,7 +27,6 @@ class FeeCard extends StatelessWidget {
     final TextTheme textTheme = theme.textTheme;
 
     return SizedBox(
-      height: 180,
       width: double.infinity,
       child: Stack(
         children: [
@@ -41,7 +40,7 @@ class FeeCard extends StatelessWidget {
             ),
             child: Container(
               color: colorScheme.surface,
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.all(24),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,6 +49,16 @@ class FeeCard extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Text(
+                          'FEE DUE',
+                          style: textTheme.titleLarge?.copyWith(
+                            color: const Color.fromARGB(255, 182, 182, 182),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+
+                        const SizedBox(height: 15),
+
                         Row(
                           children: [
                             Icon(Icons.apartment, color: colorScheme.onSurface),
@@ -66,14 +75,18 @@ class FeeCard extends StatelessWidget {
                             ),
                           ],
                         ),
+
                         const SizedBox(height: 4),
+
                         Text(
                           'Class ${student.grade}',
                           style: textTheme.bodyLarge?.copyWith(
                             color: AppColors.textSecondaryLight,
                           ),
                         ),
-                        const Spacer(),
+
+                        const SizedBox(height: 12),
+
                         Text(
                           '₹${NumberFormatter.format(student.fee)}',
                           style: textTheme.headlineLarge?.copyWith(

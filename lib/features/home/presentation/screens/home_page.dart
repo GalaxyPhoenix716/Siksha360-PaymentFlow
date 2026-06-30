@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:siksha360_task/features/home/presentation/providers/home_provider.dart';
 import 'package:siksha360_task/features/home/presentation/widgets/fee_card.dart';
 import 'package:siksha360_task/shared/siksha_appbar.dart';
@@ -39,24 +40,73 @@ class HomePage extends ConsumerWidget {
                     const SizedBox(height: 16.0),
 
                     Container(
-                      padding: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 16,
+                      ),
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: colorScheme.surface,
+                        color: colorScheme.primary,
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Column(),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Child Info',
+                            style: textTheme.bodyLarge?.copyWith(
+                              color: colorScheme.onPrimary.withValues(
+                                alpha: 0.5,
+                              ),
+                            ),
+                          ),
+
+                          const SizedBox(height: 10),
+
+                          Text(
+                            user.children[0].studentName,
+                            style: textTheme.headlineLarge?.copyWith(
+                              color: colorScheme.onPrimary,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+
+                          const SizedBox(height: 6),
+
+                          Text(
+                            'Class ${user.children[0].grade}',
+                            style: textTheme.titleLarge?.copyWith(
+                              color: colorScheme.onPrimary,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
 
-                    const SizedBox(height: 24.0),
+                    const SizedBox(height: 12),
+
+                    Divider(color: colorScheme.secondary),
+
+                    const SizedBox(height: 12),
 
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text('NOTICE'),
-                        Icon(
-                          Icons.push_pin_outlined,
-                          color: colorScheme.onSurface,
+                        Text('NOTICE', style: textTheme.titleLarge),
+
+                        Transform.rotate(
+                          angle: 0.523599, //30 degress in radians
+                          child: SvgPicture.asset(
+                            'assets/icons/pin-filled.svg',
+                            width: 24,
+                            height: 24,
+                            semanticsLabel: 'Arrow Up Right Icon',
+                            colorFilter: ColorFilter.mode(
+                              theme.colorScheme.onSurface,
+                              BlendMode.srcIn,
+                            ),
+                          ),
                         ),
                       ],
                     ),
