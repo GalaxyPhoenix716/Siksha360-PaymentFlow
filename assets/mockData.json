@@ -1,12 +1,13 @@
 {
   "id": "123456",
-  "name": "Siddhi Sharma",
+  "name": "Anjali Sharma",
   "children": [
     {
       "id": "654321",
       "studentName": "Aarav Sharma",
       "grade": "V",
-      "service": "Bright Future School",
+      "serviceName": "Bright Future School",
+      "serviceType": "School",
       "fee": 12500.0
     }
   ]
