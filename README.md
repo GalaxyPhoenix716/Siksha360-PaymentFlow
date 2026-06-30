@@ -6,13 +6,11 @@ Siksha360 Fee Payment Flow is a Clean Architecture Flutter application designed 
 
 ## 🎨 UI/UX Reasoning
 
-- **Design Choices**: Follows a warm, academic, and financial-trust palette using muted forest greens (`#1C2E24`) and deep sage greens (`#325A46`) set against a soft cream background (`#FAF1E6`). Resilient cards feature rounded corners, multi-stop gradients, and custom painters (e.g. `_NotchedCardPainter`) to draw smooth custom drop shadows and crisp thin borders in one pass.
-- **Navigation Flow**: Clean navigation from the fee dashboard (Home) to the checkout screen (Payment Details) utilizing GoRouter's name-based `.pushNamed()` routing to preserve the navigation stack and support the back button.
-- **State Handling & Feedback**:
-  - Dynamic loading state updates (using `SpinKitCircle` inside the slide action button).
-  - Validation checks: Triggers SnackBars immediately on the UI if the user attempts to submit without choosing a payment option.
-  - Expandable Accordion: The payment mode options expand smoothly using `AnimatedSize` to reveal input forms (UPI ID field, Credit Card number/CVV fields, or bank select buttons) only for the active selection.
-  - Lottie Success: A satisfying custom Lottie success checkmark animation plays on the transaction success screen.
+I designed this application to be easily operated with a single hand, keeping in mind that busy parents are often multitasking and might only have one hand free. By positioning the interactive elements—like the main fee card and the "Slide to Pay" slider—near the bottom of the screen, I ensured they sit comfortably within natural thumb reach.
+
+Knowing that parents prefer a clean, focused environment when managing finances, I chose a simple, clutter-free layout over a loud or busy design. The soothing, premium green-and-cream color palette is easy on the eyes and brings a sense of calm and stability to the payment process.
+
+Additionally, I integrated a "Slide to Pay" slider instead of a standard tap button. This physical swipe gesture acts as a safety guard, preventing accidental payments from a child playing with the phone or a parent's unintended misclick.
 
 ---
 
@@ -86,7 +84,8 @@ lib/
 │   │
 │   └── payment/                 # Payment details & success confirmation flow
 │       ├── data/
-│       │   ├── datasources/
+│       │   ├── models/
+│       │   │   └── payment_transaction_model.dart
 │       │   └── repositories/
 │       │       ├── invoice_repository_impl.dart
 │       │       └── payment_repository_impl.dart
