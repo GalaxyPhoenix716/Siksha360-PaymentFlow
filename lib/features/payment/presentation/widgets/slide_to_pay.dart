@@ -44,7 +44,7 @@ class SlideToPay extends ConsumerWidget {
           if (!context.mounted) return;
 
           if (success) {
-            context.pushNamed(RouteNames.paymentCompletedRouteName);
+            context.goNamed(RouteNames.paymentCompletedRouteName);
           } else {
             final state = ref.read(paymentControllerProvider);
             final errorMsg =

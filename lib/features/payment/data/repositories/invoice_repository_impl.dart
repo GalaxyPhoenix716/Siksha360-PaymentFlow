@@ -27,7 +27,7 @@ class InvoiceRepositoryImpl extends InvoiceRepository {
               pw.Divider(),
               pw.SizedBox(height: 10),
               pw.Text(
-                'Amount Paid: ₹${transaction.amount}',
+                'Amount Paid: Rs.${transaction.amount}',
                 style: pw.TextStyle(
                   fontSize: 20,
                   fontWeight: pw.FontWeight.bold,
