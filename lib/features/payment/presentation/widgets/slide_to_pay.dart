@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:go_router/go_router.dart';
+import 'package:siksha360_task/core/constants/route_names.dart';
 import 'package:siksha360_task/features/payment/presentation/providers/payment_provider.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 
@@ -31,13 +32,39 @@ class SlideToPay extends ConsumerWidget {
       innerColor: colorScheme.onPrimary,
       elevation: 0,
       onSubmit: () async {
-        await ref
-            .read(paymentControllerProvider.notifier)
-            .processPayment(
-              receiverName: receiverName,
-              receiverType: receiverType,
-              amount: amount,
+        try {
+          final success = await ref
+              .read(paymentControllerProvider.notifier)
+              .processPayment(
+                receiverName: receiverName,
+                receiverType: receiverType,
+                amount: amount,
+              );
+
+          if (!context.mounted) return;
+
+          if (success) {
+            context.pushNamed(RouteNames.paymentCompletedRouteName);
+          } else {
+            final state = ref.read(paymentControllerProvider);
+            final errorMsg =
+                state.validationError ?? state.errorMessage ?? 'Payment failed';
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(errorMsg),
+                backgroundColor: colorScheme.error,
+              ),
             );
+          }
+        } catch (e) {
+          if (!context.mounted) return;
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(e.toString()),
+              backgroundColor: colorScheme.error,
+            ),
+          );
+        }
       },
       submittedIcon: SpinKitCircle(color: colorScheme.onPrimary, size: 35),
     );

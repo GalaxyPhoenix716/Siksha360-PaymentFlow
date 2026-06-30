@@ -26,7 +26,10 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         name: RouteNames.paymentCompletedRouteName,
         path: '/${RouteNames.paymentCompletedRouteName}',
-        builder: (context, state) => const PaymentCompletedPage(),
+
+        builder: (context, state) {
+          return PaymentCompletedPage();
+        },
       ),
     ],
   );
